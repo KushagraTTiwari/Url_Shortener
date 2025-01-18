@@ -29,7 +29,7 @@ type URL struct {
 var urlDB = make(map[string]URL)
 
 func generateShortURL(OriginalUrl string) string {
-	hasher := md5.New()
+	hasher := md5.New()               //this package, will help to convert string to hash
 	hasher.Write([]byte(OriginalUrl)) //It converts the originalURL string to a byte slice
 	data := hasher.Sum(nil)
 	hash := hex.EncodeToString(data)
